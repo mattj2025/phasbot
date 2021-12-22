@@ -1,0 +1,5 @@
+discord.py
+discord-components
+python-dotenv
+pymongo
+pymongo[srv]
