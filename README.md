@@ -2,6 +2,8 @@
 
 A discord bot to assist you when playing phasmophobia.
 
+### [Add phasbot to your server here!](https://discord.com/oauth2/authorize?client_id=914221450586644481&scope=bot)
+
 ## Bot Commands
 
 - ```?help``` - shows commands
@@ -11,6 +13,7 @@ A discord bot to assist you when playing phasmophobia.
 - ```?evidence``` - shows list of all evidences for you to select and then shows possible ghosts
 
 - ```?map``` - shows a list of maps to select to see details and maps or type a map's name after instead(ex: ?info prison)
+
 
 ## Get Started
 1. Clone the repository
