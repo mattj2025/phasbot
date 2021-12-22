@@ -12,4 +12,3 @@ __**Commands:**__
 - **?evidence** - shows list of all evidences for you to select and then shows possible ghosts
 
 - **?map** - shows a list of maps to select to see details and maps or type a map's name after instead(ex: ?info prison)
-
