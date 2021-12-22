@@ -8,11 +8,11 @@ A discord bot to assist you when playing phasmophobia.
 
 - ```?help``` - shows commands
 
-- ```?info [ghost name]``` - shows a list of ghosts to select to see details about or type a ghost after instead(ex: ?info banshee)
+- ```?info [ghost name]``` - shows a list of ghosts to select to see details about it, or type a ghost after instead (ex: ?info banshee)
 
 - ```?evidence``` - shows list of all evidences for you to select and then shows possible ghosts
 
-- ```?map [map name]``` - shows a list of maps to select to see details and maps or type a map's name after instead(ex: ?info prison)
+- ```?map [map name]``` - shows a list of maps to select to see details and maps, or type a map's name after instead (ex: ?info prison)
 
 
 ## Get Started
