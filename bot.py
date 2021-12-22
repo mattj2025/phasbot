@@ -15,8 +15,8 @@ DB_URI = os.getenv('DATABASE_URI')
 client = MongoClient(DB_URI)
 db = client["PhasbotDB"]
 
-gColl = db["GhostInfo"]
-mColl = db["MapInfo"]
+ghost_collection = db["GhostInfo"]
+map_collection = db["MapInfo"]
 
 evidences = ['Ghost Orb', 'Spirit Box', 'EMF Level 5', 'Fingerprints', 'Ghost Writing', 'D.O.T.S Projector', 'Freezing Temperatures']
 
@@ -33,7 +33,7 @@ async def on_ready():
 async def info(ctx, arg = None):
     if arg is not None:
         try:
-            ghostinfo = gColl.find_one({ "name": arg })
+            ghostinfo = ghost_collection.find_one({ "name": arg })
             msginfo = "__**{}**__\n\n\t**Description:** `{}`\n\n\t**Strength:** `{}`\n\t**Weakness:** `{}`\n\n\t**Evidences:**\n".format(ghostinfo["name"].capitalize(), ghostinfo["about"], ghostinfo["strength"], ghostinfo["weakness"])
             for evidence in ghostinfo["evidence"]:
                 msginfo += f"\t\t- `{evidence}`\n"
@@ -43,7 +43,7 @@ async def info(ctx, arg = None):
             await ctx.send("I couldn't access the database.")
     else:
         # Retrieve ghost info from database
-        ghosts = gColl.find()
+        ghosts = ghost_collection.find()
         await ctx.send(
             "Choose from one of these:",
             components = [
@@ -86,7 +86,7 @@ async def evidence(ctx, detailed = None):
     )
     interaction = await bot.wait_for("select_option")
     await interaction.send(content = "Loading...")
-    ghosts = gColl.find()
+    ghosts = ghost_collection.find()
 
     selected_evidence = interaction.values
     print(selected_evidence)
@@ -122,14 +122,14 @@ async def map(ctx, arg = None):
     if arg is not None:
         try:
             regex = re.compile(f".*{arg}.*", re.IGNORECASE)
-            mapInfo = mColl.find_one({ "name": { "$regex": regex } })
+            mapInfo = map_collection.find_one({ "name": { "$regex": regex } })
             msginfo = "__**{}**__\n\n**Size:** {}\n\n**Map:** {}\n".format(mapInfo["name"].title(), mapInfo["size"].capitalize(), mapInfo["image"])
             await ctx.send(msginfo)
         except Exception as error:
             print(error)
             await ctx.send(f"I couldn't access the database.\nError: {error}")
     else:
-        maps = mColl.find()
+        maps = map_collection.find()
         await ctx.send(
             "Choose from one of these:",
             components = [
