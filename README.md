@@ -4,6 +4,8 @@ A discord bot to assist you when playing phasmophobia.
 
 ### [Add phasbot to your server here!](https://discord.com/oauth2/authorize?client_id=914221450586644481&scope=bot)
 
+### [Test phasbot here!](https://discord.gg/U2nckekKW8)
+
 ## Bot Commands
 
 - ```?help``` - shows commands
